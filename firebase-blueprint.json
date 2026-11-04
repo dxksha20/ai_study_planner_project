@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "description": "Engineering student profiles and gamification stats",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "stream": { "type": "string" },
+        "branch": { "type": "string" },
+        "targetExam": { "type": "string" },
+        "targetHours": { "type": "number" },
+        "level": { "type": "number" },
+        "xp": { "type": "number" },
+        "coins": { "type": "number" },
+        "streakDays": { "type": "number" },
+        "subjects": { "type": "array", "items": { "type": "string" } },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "name"]
+    },
+    "schedules": {
+      "title": "Study Schedules",
+      "description": "Daily study timetable slots for CS/IT courses",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "day": { "type": "string" },
+        "slots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "time": { "type": "string" },
+              "subject": { "type": "string" },
+              "type": { "type": "string" },
+              "notes": { "type": "string" },
+              "completed": { "type": "boolean" }
+            }
+          }
+        },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "day"]
+    },
+    "notes": {
+      "title": "Smart Notes",
+      "description": "CS/IT study notes and code snippets",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "subject": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "title"]
+    },
+    "calendar_events": {
+      "title": "Google Calendar Synced Events",
+      "description": "Synced study events from Google Calendar",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "googleEventId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "syncedAt": { "type": "string" }
+      },
+      "required": ["userId", "title"]
+    }
+  }
+}

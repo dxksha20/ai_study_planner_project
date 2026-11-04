@@ -1,0 +1,6 @@
+{
+  "name": "SmartAI - AI-Powered Learning Operating System",
+  "description": "An AI-powered Learning OS competing with Duolingo, Notion, Spotify, and Gemini featuring smart timetable, evolving avatar system, AI voice tutor, and multimodal copilot.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
